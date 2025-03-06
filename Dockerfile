@@ -14,7 +14,7 @@ RUN mvn clean package -DskipTests
 FROM amazoncorretto:21-alpine-jdk
 WORKDIR /app
 # Copia el JAR desde la etapa de construcción
-COPY --from=builder /app/target/Desarrollo-Corpelima-*.jar app.jar
+COPY --from=builder /app/target/Plataforma-Educativa-*.jar app.jar
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
